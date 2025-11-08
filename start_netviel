@@ -1,6 +1,6 @@
 #!/bin/bash
-source /home/jasonyau/.virtualenvs/netviel/bin/activate 
-cd /home/jasonyau/netviel
-python -m gunicorn -w 1 -b 127.0.0.1:5000 'netviel.api:create_app()'
+source /home/jason/.virtualenvs/netviel/bin/activate 
+cd /home/jason/netviel
+python -m gunicorn -w 1 -b 0.0.0.0:5000 'netviel.api:create_app()'
 
 

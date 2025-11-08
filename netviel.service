@@ -1,0 +1,26 @@
+[Unit]
+Description=Netviel API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jason
+Group=jason
+WorkingDirectory=/home/jason/netviel
+ExecStart=/home/jason/netviel/start_netviel
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=netviel_api
+
+# Security hardening options
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/jason/netviel
+
+[Install]
+WantedBy=multi-user.target
